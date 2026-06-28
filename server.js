@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/flexforge')
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected to FlexForge'))
   .catch(err => console.log('DB Error:', err));
 
